@@ -1,8 +1,11 @@
 /*
+
  This is a choose-your-own-adventure game written by Kody Wildfeuer
 
- 
+
 */
+
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -10,6 +13,7 @@
 void dungeonDoor();
 void stairCase();
 void upStairs();
+void mainFloorLivingRoom();
 
 void dead();
 void sleep();
@@ -104,11 +108,11 @@ void stairCase()
 		printf("Just as the door is about to open, you slam it as hard as humanly possible.\n");
 		printf("A harsh shriek pierces through the staircase.\n");
 		printf("While running up the stairs the broken tenticle tries to grab your leg.\n");
-		upStairs();
+		mainFloorLivingRoom();
 
 	}else if(choice == 2)
 	{
-		upStairs();
+		mainFloorLivingRoom();
 	}else if(choice == 3)
     {
         printf("With your tummy growling you decide the bite the tentacle.\n");
@@ -149,6 +153,67 @@ void upStairs()
 	}else if(choice == 3)
 	{
 		printf("Just as you reopen the basement door, the whiplike tenticles engulf you and pull you into the darkness.\n");
+
+		dead();
+
+	}
+
+
+}
+
+void mainFloorLivingRoom()
+{
+	int choice = 0;
+
+	printf("As you reach the upstairs gasping for breath,\n"); 
+	printf("you come across a lavish room with baroque furniture,\n");
+	printf("red wallpapered interior, and classical music playing on a old phonograph.\n");
+	printf("The fireplace smolders but the room is without life.\n");
+	printf("What should you do?\n1)  Look Around\n2)  Jump out of the window\n3)  Climb up chimney\n4)  Go back downstairs\n");
+
+	scanf("%d", &choice);
+
+	if(choice == 1)
+	{
+		choice = 0;
+
+		printf("Trying to calm yourself, you frantically glance around\n");
+		printf("the room, trying to block out the panic. The living room\n");
+		printf("has a two hallways that lead to the kitchen and master bedroom.\n");
+		printf("Where will you go?\n1)  Bedroom\n2)  Kitchen\n3)  Stay in Living Room\n");
+
+		if(choice == 1)
+		{
+
+		}else if(choice == 2)
+		{
+
+		}else if(choice == 3)
+		{
+			mainFloorLivingRoom();
+		}
+
+
+	}
+	else if(choice == 2)
+	{
+		printf("Desperately you brace yourself as you gain speed. The windows have curtains covering.\n");
+		printf("Sadly, instead of breaking through the window, you smash against glass with a brick wall behind it.\n");
+		printf("Dizzily you realize that all of the windows must be bricked off, and you fade to black.\n");
+		start();
+	}else if(choice == 3)
+	{
+
+		printf("You put out the fire by emptying the water from a flower vase. The fire is smothered.\n");
+		printf("You squeeze your way into the chimney and squirm your way to the top.\n");
+		printf("After you reach the exit of the chimney you slip and slide down the roof.\n");
+		printf("Just before you fall off of the roof, your arm catches a ridge and steadies you\n");
+		printf("You hold on until you catch your breath, your heart pumping in your chest\n");
+		printf("You find your way off of the roof and run for safety, and away from danger!\n");
+		win();
+	}else if(choice == 4)
+	{
+		printf("Just as you reopen the basement door, the whip-like tenticles engulf you and pull you into the darkness.\n");
 
 		dead();
 
